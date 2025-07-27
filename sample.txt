@@ -1,0 +1,15 @@
+✅ Sample URLs for Testing:
+Try scanning these to verify functionality:
+
+Low Risk: https://example.com/profile
+
+Medium Risk: https://free-gift-login-page.net
+
+High Risk: http://192.168.0.1/login?verify=paypal@secure-update.com
+
+
+http://192.254.0.1/paypal.com-login.secure-account-verification/helloworldiamnew@.com
+
+API key of Google Safe Browsing API 
+
+AIzaSyDXWxfhC7ZUlwZ8Qhq6UfhIqp6BeiLumyk
