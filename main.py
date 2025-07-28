@@ -16,8 +16,22 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import streamlit.components.v1 as components
 
+
 st.set_page_config(page_title="HookYourPhish",page_icon="🦈", layout="centered")
 st.title("🦈 HookYourPhish")
+st.sidebar.markdown("### 👥 Team Members")
+st.sidebar.markdown("""
+- [**Jay Rathod**](https://github.com/Jay061205)  
+- [**Raja Mishra**](https://github.com/Trilo-C)  
+- [**Yug Kakawat**](https://github.com/yugkakawat)
+""")
+st.sidebar.info("""
+📢 **Note:** This project was developed collaboratively by  
+[Jay Rathod](https://github.com/Jay061205), [Raja Mishra](https://github.com/Trilo-C), and [Yug Kakawat](https://github.com/yugkakawat).  
+Jay is listed as the repository owner for deployment purposes only.
+""")
+
+
 
 # Create main tabs
 tab1, tab2, tab3 = st.tabs(["🔗 Check URL", "📧 Check Email", "🌐 Check Domain"],)
