@@ -8,6 +8,7 @@ Medium Risk: https://free-gift-login-page.net
 High Risk: http://192.168.0.1/login?verify=paypal@secure-update.com
 
 
+http://testsafebrowsing.appspot.com/apiv4/ANY_PLATFORM/MALWARE/URL/
 http://192.254.0.1/paypal.com-login.secure-account-verification/helloworldiamnew@.com
 
 API key of Google Safe Browsing API 

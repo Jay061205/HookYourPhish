@@ -1,0 +1,1600 @@
+Delivered-To: tbrjay@gmail.com
+Received: by 2002:a05:7301:2c0a:b0:17e:8c53:34ef with SMTP id hs10csp5094448dyb;
+        Wed, 9 Jul 2025 16:10:03 -0700 (PDT)
+X-Received: by 2002:a05:6602:6d03:b0:875:b8b7:7864 with SMTP id ca18e2360f4ac-879671e28eemr163533839f.6.1752102603074;
+        Wed, 09 Jul 2025 16:10:03 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1752102603; cv=none;
+        d=google.com; s=arc-20240605;
+        b=lTdlf7dx8maudXNDK8y4xPaHBPSEKN56sfa5KZ50zqEE8M60jQXEFy9oJy9gXSIYVd
+         wFChb8Wa6VqDmf9hG1QGYjiwg7fOmHBoL/QrhTAEPtJn8JVtQ0Lo4O3XUrAhKfU5ynOT
+         YUA0NHwCeRMUyyCFw7gLjQJY1tLIx02c/rsn7xnsCvmw5HpgRpYRDVf+AHlDEn+GlWxn
+         m8VJ3aSIYIR7hrNEkzauDYkutuLnL1NwAW1FOzArtJLrQBGdKrkaefXsvSL0IFBHoS0h
+         SVjNqnxmIktpE9mHef8ntpyaDnp/cZwWtiGBxn7CgAE0uiMvRnGBSm4Jz4TjaDA0n1Hl
+         A1Tg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :dkim-signature;
+        bh=gF8frylJ5RcLHjbGZj/inM41WP+WXGnp2PtWSrzyYIo=;
+        fh=jE0WTLm0WxmKxkVVGub1oSnaafxhhQ3qgVN+dK8wcuU=;
+        b=GPAC7rEJZkdT9FBeG71iXg+Fs1GUsYKAfZmpZgSGVecWQFmXSvJZrPFt5O45X3YKgO
+         /B6YJ/2V6aQFCuBviNJQf1qYgFmCJA0cs5nSxcEb8d8gZZUMJy6PULBFoh/S8ywSDPOg
+         8xg5x35avb8gaThUre3+1FT21eZUIimR6KajDzmA76W5nkmfIxA868xjcsysgpk4/t/T
+         vV+mew+zbAj5pitHUocsqxGBBtgt0q/faH5v2mPIrD0OqfvBJZMBlSdmYWGzq9x5SRrp
+         SaL1baYLnnfjvbKy25nDS1S6o0qk4qZX2uiRkOM2pKeCItrWi7d49Qc2qv3jhoAJwWqn
+         iv0w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b="HzmJ/T9n";
+       spf=pass (google.com: domain of 3yvzuaa4kbr0jrrjoh-qruhso1jrrjoh.frpweumd1jpdlo.frp@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3yvZuaA4KBr0jrrjoh-qruhso1jrrjoh.frpweumd1jpdlo.frp@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <3yvZuaA4KBr0jrrjoh-qruhso1jrrjoh.frpweumd1jpdlo.frp@scoutcamp.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id ca18e2360f4ac-8796b79362fsor7585439f.0.2025.07.09.16.10.02
+        for <tbrjay@gmail.com>
+        (Google Transport Security);
+        Wed, 09 Jul 2025 16:10:03 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3yvzuaa4kbr0jrrjoh-qruhso1jrrjoh.frpweumd1jpdlo.frp@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b="HzmJ/T9n";
+       spf=pass (google.com: domain of 3yvzuaa4kbr0jrrjoh-qruhso1jrrjoh.frpweumd1jpdlo.frp@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3yvZuaA4KBr0jrrjoh-qruhso1jrrjoh.frpweumd1jpdlo.frp@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1752102602; x=1752707402; dara=google.com;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=gF8frylJ5RcLHjbGZj/inM41WP+WXGnp2PtWSrzyYIo=;
+        b=HzmJ/T9nmbd/7Ue6HalZprdd/6jHTN9mGDt1MlAEYfJ4hewE97H26toQasj3f/Vj6x
+         HuYcXBeNjVDXNs0yIdXx73Ee8+7PUGgsiC/DsOBV7lh3OHRQ9zGk1tAwfrOyhonb/am1
+         sQijaLq+svlz6lkD6+JKZUGts1+yIH7lpCtG9TrVVBuh46UveGOYqT5HT4kcP+dwEMMF
+         /S6WlPOnu4M5nrCMeqJjy2tAOljUmszKfs7/HwrZXTG8uBOftNLY3XTIaaoh+vNBUye+
+         PTFlUPBoAypvDZ4eJcQjpA0wZrfK8nNtESGEYmocG279wg6Sess6umDJhMMYkVZMCwui
+         yPBg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752102602; x=1752707402;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=gF8frylJ5RcLHjbGZj/inM41WP+WXGnp2PtWSrzyYIo=;
+        b=QRQ8IntM8BWWG0tpH8fjvUiUo2zOR3EIUsuGgmysatkOqgxM6NuqUFCCK0l7Qmbp+1
+         ju83RWPL8ej2jiNv+OScsBT4QeeM6by/3ArwC3d0gGnP+KxLbDCmbOkZAhrgO6MpeO6a
+         gWGO7rVpIyDABnLhKRkjb3Mt8UDObBj/KP5ZpysbxN7eCtAKJaNMIxOyNsoOTECsIVN0
+         iYdq61NH6yOfhegzi0j+BFjQotVemkP+FrgqwdfQM5cvNS8fe9TrGBPkb6P1P3CjgdTC
+         DC1MGcNAMaKL03mDuu08iz5GK3/WydzZ+aL4iRzjglqkNGBrZBC+ANHwOTNpOjUJS19l
+         qDlA==
+X-Gm-Message-State: AOJu0YyRUAIMMfessrHwQ3ESbQYD/kvSCBYZF+o9Yl3nMP6bFMlrzMA9
+	3gZ2hh73AnrQofSTqPlf+cy/QHLaEjHnWnsF05xupAEC0n5v2ndk93q18UBm
+X-Google-Smtp-Source: AGHT+IGYS2uG1ZQiabCgFiySgeYkHwjfG+X8GUxGGvL2oRhg3wy8VGJizycOQb9lpidFqMbdTKwRPB4=
+MIME-Version: 1.0
+X-Received: by 2002:a05:6602:1647:b0:875:ba23:a065 with SMTP id
+ ca18e2360f4ac-879663d9d27mr199540039f.11.1752102602548; Wed, 09 Jul 2025
+ 16:10:02 -0700 (PDT)
+Date: Wed, 09 Jul 2025 16:10:02 -0700
+Reply-To: Google <google-noreply@google.com>
+X-Google-Id: 4014830
+Feedback-ID: P-239-0:C20269419:M110927232-en-GB:gamma
+X-Notifications: aba6b98efc9a0000
+X-Notifications-Bounce-Info: AWoTSIHbflJc6TqT09WZL8QXuBZjFQHe0-P-2lYcPkV05lwFiSNuafhtOOyoHZhPZD4YzQxxO3KSnaGsdAt6jnqTXxlNeVR_wj0oWM4D4y-tQ30AGZ0bgEv5FmIT0WD1oBNz8gohlr8F4TaLTqP4N3oCQUIfY19TuL65_TS1y4clEHb0cV967W7knNk9QHOFocYYnCls_uk3t4aRcfg0RMdHl5mD1MmXl4AhKnHAhOrsP-dKK0aAeO77Ce36tVcmlmMbuAlJWs7bBEdzgTHm_D4xrKapUABkOl3mH8L278G940zF87p0mikikreEI0X0GTTvYxWJgStSYKqPqgEGvdITBBFMb9Mor4wOhiTYB5Fv4SMnknQlH_RFvU3WbicIfPtLthSCHaFXYJeSGkgjHtnQpvuCOTMLmxSKuWTasZm5zaKJuex4uBuapSPIYOhnZkIufyY5rl4rsYaX8DpeBxlGG8ANMfMJeKSJpnu4F_oDXZoNjAwNjA0MDQxNTM1NTk2OTMzMg
+Message-ID: <8f591c2668b0b6f03a7af56c0f1ec18caf8ab435-20269419-111633767@google.com>
+Subject: =?UTF-8?Q?=E2=9A=A0=EF=B8=8F_Your_Gmail_will_stop_working_in_5_days?=
+From: Google <google-noreply@google.com>
+To: tbrjay@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000003c2c910639872d17"
+
+--0000000000003c2c910639872d17
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+VGFrZSBhY3Rpb24gYnkgSnVsIDE0LCAyMDI1DQoNCs2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2P
+IM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PIM2PDQoNCg0KDQoNCllvdSdy
+ZSBvdXQgb2Ygc3RvcmFnZSBhbmQgd2lsbCBzdG9wIHJlY2VpdmluZyBlbWFpbHMgc29vbg0KDQoN
+Cg0KNQ0KZGF5cyByZW1haW5pbmcNCg0KDQoNCllvdSd2ZSB1c2VkIGFsbCAxNSBHQiBvZiB5b3Vy
+IEdvb2dsZSBBY2NvdW50IHN0b3JhZ2UuIElmIHlvdSBkb24ndCB0YWtlICANCmFjdGlvbiBieSBK
+dWwgMTQsIDIwMjUsIGVtYWlscyBzZW50IHRvIHlvdSB3aWxsIGJvdW5jZSBiYWNrIHRvIHRoZSBz
+ZW5kZXIgIA0KYW5kIGNhbid0IGJlIHJlY292ZXJlZCBsYXRlci4gV2l0aG91dCBzdG9yYWdlLCB5
+b3UgY2FuIG5vIGxvbmdlcjoNCg0KDQoNClNlbmQgYW5kIHJlY2VpdmUgZW1haWxzIG9uIEdtYWls
+IGFmdGVyIDUgZGF5cw0KDQoNCg0KDQpCYWNrIHVwIG5ldyBwaG90b3MgYW5kIHZpZGVvcyB0byBH
+b29nbGUgUGhvdG9zDQoNCg0KDQoNClVwbG9hZCBuZXcgZmlsZXMgdG8gR29vZ2xlIERyaXZlDQoN
+Cg0KDQoNCkVkaXQgb3IgY3JlYXRlIG5ldyBmaWxlcyB1c2luZyBHb29nbGUgRG9jcywgU2hlZXRz
+LCBTbGlkZXMsIEZvcm1zIGFuZCBtb3JlDQoNCg0KDQoNCkdldCBtb3JlIHN0b3JhZ2Ugd2l0aCBh
+IEdvb2dsZSBPbmUgbWVtYmVyc2hpcC4NCg0KDQpHZXQgbW9yZSBzdG9yYWdlDQoNCg0KTm90IHJl
+YWR5IHRvIGdldCBtb3JlIHN0b3JhZ2U/DQoNCg0KQ2xlYW4gdXAgc3BhY2UNCg0KDQpXaGF0IGlz
+IEdvb2dsZSBPbmU/DQoNCkdvb2dsZSBPbmUgaXMgYSBtZW1iZXJzaGlwIHRoYXQgb2ZmZXJzIGV4
+cGFuZGVkIHN0b3JhZ2UgYW5kIGFkZGl0aW9uYWwgIA0KbWVtYmVyIGJlbmVmaXRzIOKAoSDigJMg
+YWxsIGluIG9uZSBzaGFyZWFibGUgcGxhbi4NCg0KDQoNCg0KDQoNClBsZWFzZSBkaXNyZWdhcmQg
+dGhpcyBlbWFpbCBpZiB5b3UgaGF2ZSBhbHJlYWR5IHRha2VuIGFjdGlvbi4NCg0KDQoNCkhhdmUg
+YW55IHF1ZXN0aW9ucz8NCg0KVmlzaXQgdGhlIEhlbHAgQ2VudHJlIOKAug0KDQoNCg0KDQpXYXMg
+dGhpcyBlbWFpbCBoZWxwZnVsPw0KDQoNCg0KDQpIYXBweQ0KDQpOZXV0cmFsDQoNClNhZA0KDQoN
+Cg0KDQoNCuKAoQ0KDQoNCkFsbCBHb29nbGUgQWNjb3VudHMgZ2l2ZSB5b3UgMTUgR0Igb2Ygc3Rv
+cmFnZS4gQnkgc3Vic2NyaWJpbmcsIHlvdSBhZ3JlZSB0byAgDQpvdXIgdGVybXMuIFNlZSBiZW5l
+Zml0IHJlcXVpcmVtZW50cyBhbmQgaG93IEdvb2dsZSBoYW5kbGVzIGRhdGEuDQoNCg0KDQoNCg0K
+DQoNCg0KDQoNCg0KWW91IGhhdmUgcmVjZWl2ZWQgdGhpcyBtYW5kYXRvcnkgZW1haWwgc2Vydmlj
+ZSBhbm5vdW5jZW1lbnQgdG8gdXBkYXRlIHlvdSAgDQphYm91dCBpbXBvcnRhbnQgaW5mb3JtYXRp
+b24gcmVnYXJkaW5nIHlvdXIgR29vZ2xlIEFjY291bnQuDQoNCg0KDQoNCg0KDQoNCg0KDQrCqSAy
+MDI1IEdvb2dsZSBMTEMgMTYwMCBBbXBoaXRoZWF0cmUgUGFya3dheSwgTW91bnRhaW4gVmlldywg
+Q0EgOTQwNDMNCg0KDQoNCg==
+--0000000000003c2c910639872d17
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html public "- / / w3c / / dtd xhtml 1.0 transitional / / en" "ht=
+tp: / / www.w3.org / tr / xhtml1 / dtd / xhtml1-transitional.dtd">
+<html lang=3Den dir=3Dltr>
+<head>
+<title>Google Account storage full</title>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<meta name=3Dviewport content=3D"width=3Ddevice-width, user-scalable=3Dyes,=
+initial-scale=3D1.0, minimum-scale=3D1.0, maximum-scale=3D2.0">
+<meta http-equiv=3DX-UA-Compatible content=3DIE=3Dedge>
+<meta name=3Dx-apple-disable-message-reformatting>
+<meta name=3Dformat-detection content=3Dtelephone=3Dno>
+<style>
+@font-face {
+font-family: 'Google Sans';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/googlesans/v62/4Ua_rENHsxJlGDuGo1OIlJf=
+C6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrwEIKli.ttf) format('truetype=
+');}
+@font-face {
+font-family: 'Google Sans';
+font-style: normal;
+font-weight: 500;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/googlesans/v62/4Ua_rENHsxJlGDuGo1OIlJf=
+C6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrw2IKli.ttf) format('truetype=
+');}
+@font-face {
+font-family: 'Google Sans';
+font-style: normal;
+font-weight: 700;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/googlesans/v62/4Ua_rENHsxJlGDuGo1OIlJf=
+C6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RFD48TE63OOYKtrzjJ6li.ttf) format('truetype=
+');}
+@font-face {
+font-family: 'Google Sans Text';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/googlesanstext/v23/5aUu9-KzpRiLCAt4Unr=
+c-xIKmCU5mE0.ttf) format('truetype');}
+@font-face {
+font-family: 'Google Sans Text';
+font-style: normal;
+font-weight: 500;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/googlesanstext/v23/5aUp9-KzpRiLCAt4Unr=
+c-xIKmCU5oLlVrm8.ttf) format('truetype');}
+@font-face {
+font-family: 'Google Sans Text';
+font-style: normal;
+font-weight: 700;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/googlesanstext/v23/5aUp9-KzpRiLCAt4Unr=
+c-xIKmCU5oPFTrm8.ttf) format('truetype');}
+@font-face {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-stretch: normal;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdT=
+ylUAMQXC89YmC2DPNWubEbWmT.ttf) format('truetype');}
+@font-face {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-stretch: normal;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdT=
+ylUAMQXC89YmC2DPNWub2bWmT.ttf) format('truetype');}
+@font-face {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-stretch: normal;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/roboto/v47/KFOMCnqEu92Fr1ME7kSn66aGLdT=
+ylUAMQXC89YmC2DPNWuYjammT.ttf) format('truetype');}
+</style>
+<style type=3Dtext/css>
+@media only screen and (min-width: 720px) {
+body {
+width: 720px;
+}
+.full-width {
+width: 720px;
+}
+.width-100-pct {
+width: 100%;
+}
+.desktop-hide {
+display: none !important;
+}
+.col-1 {
+width: 37px !important;
+}
+.col-2 {
+width: 94px !important;
+}
+.col-8 {
+width: 436px !important;
+}
+.col-10 {
+width: 550px !important;
+}
+.col-12 {
+width: 664px !important;
+}
+.margin {
+width: 28px;
+}
+.gutter {
+width: 20px;
+}
+}
+@media only screen and (max-width: 719px) {
+.m-hide {
+display: none !important;
+}
+.m-100pct {
+width: 100%;
+}
+.col-m-4,
+.gutter {
+display: inline-block;
+text-align: center;
+margin: 0 auto;
+}
+}
+@media only screen and (min-width: 500px) and (max-width: 719px) {
+body {
+width: 500px;
+}
+.full-width {
+width: 500px;
+}
+.col-m-4 {
+width: 468px !important;
+}
+.col-400 {
+width: 400px !important;
+}
+.margin {
+width: 16px !important;
+}
+.gutter {
+width: 16px !important;
+}
+}
+@media only screen and (max-width: 499px) {
+body {
+width: 100%;
+}
+.full-width {
+width: 100%;
+}
+.mobile-hide {
+display: none !important;
+}
+.col-m-4 {
+width: calc(4*(calc((100% - (16px*3))/4)) + (3*16px)) !important;
+}
+.margin {
+width: 16px !important;
+}
+.gutter {
+width: 16px !important;
+}
+}
+@media only screen and (max-width: 330px) {
+.mobile-hide {
+display: none !important;
+}
+.full-width {
+width: 330px !important;
+}
+}
+@media only screen and (max-width: 719px) {
+.h2 {
+font-size: 32px !important;
+}
+h3 {
+font-size: 28px !important;
+}
+.h5 {
+font-size: 22px !important;
+}
+.subhead-1 {
+font-size: 18px !important;
+}
+.storage-chart-font {
+font-size: 14px !important;
+}
+}
+.img-com img:hover {
+cursor: default;
+}
+img:hover {
+cursor: default;
+}
+@media only screen and (max-width: 499px) {
+.outer {
+box-sizing: border-box;
+}
+}
+@media only screen and (max-width: 719px) {
+.m-padding-benefit-list-a {
+padding-left: 10px !important;
+padding-bottom: 0px !important;
+}
+}
+@media only screen and (min-width: 500px) and (max-width: 719px) {
+.col-436 {
+width: 436px !important;
+}
+}
+@media only screen and (max-width: 719px) {
+.text-block .text-block_m-align-center .copy-lockup {
+text-align: center !important;
+}
+.text-block .subhead {
+color: #1F1F1F;
+}
+}
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+.text-block .subhead {
+color: #1F1F1F;
+font-size: 14px !important;
+text-size-adjust: none !important;
+-webkit-text-size-adjust: 100% !important;
+-ms-text-size-adjust: none !important;
+-moz-text-size-adjust: none !important;
+}
+}
+@media only screen and (min-width: 500px) and (max-width: 719px) {
+.storage-chart__max-width-464 {
+max-width: 464px !important;
+}
+}
+@media only screen and (max-width: 719px) {
+.gutter {
+display: table-cell;
+}
+}
+@media only screen and (max-width: 719px) {
+.class_br-1 {
+font-size: 12px;
+line-height: 18px;
+}
+}
+@media only screen and (min-width: 500px) {
+.mod_footer-side-padding {
+padding: 0px 20px !important;
+}
+}
+@media only screen and (max-width: 499px) {
+.padding_divider_mob {
+padding: 0px 16px !important;
+}
+}
+@media only screen and (max-width: 719px) {
+.card-10c__row {
+width: 298px !important;
+}
+.card-10c__row .card-10c__card .text-simple .copy-lockup {
+padding: 0px 24px 0px 24px !important;
+margin: 0 !important;
+}
+}
+@media only screen and (min-width: 500px) and (max-width: 719px) {
+.card-10c__row {
+width: 400px !important;
+}
+}
+@media only screen and (max-width: 719px) {
+.compact-1__content {
+padding: 0 16px !important;
+}
+}
+@media only screen and (min-width: 500px) and (max-width: 719px) {
+.col-432 {
+width: 432px !important;
+}
+}
+</style>
+<style type=3Dtext/css>
+@media only screen and (max-width: 430px) {
+.col-432 {
+max-width: 370px!important;
+padding-left: 0px !important;
+padding-right: 0 !important;
+}
+.days_remaining_p_fix {
+font-size: 22px!important;
+}
+.days_remaining_digit_fix {
+font-size: 70px!important;
+line-height: 70px!important;
+}
+}
+</style>
+</head>
+<body class=3Dbody style=3D"color: #3C4043; font-family: &#39;Google Sans&#=
+39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif; font-weight: 400; f=
+ont-size: 14px; line-height: 150%; -webkit-font-smoothing: antialiased; mar=
+gin: 0 auto; text-align: center;">
+<table role=3Dpresentation style=3D"width: 100%; border-collapse: collapse;=
+ margin: 0 auto !important; border: none; padding: 0;" cellpadding=3D0 cell=
+spacing=3D0 border=3D0><tbody><td style=3D"font-family: inherit; padding: 0=
+ !important; margin: 0 !important;">
+<div dir=3Dltr style=3D"box-sizing: border-box; display: none; font-family:=
+ &#39;Google Sans&#39;, Roboto, Arial, sans-serif; font-size: 0px; line-hei=
+ght: 0px; margin: 0;">Take action by <span class=3D"" style=3Dwhite-space:n=
+owrap;>Jul 14, 2025</span></div>
+<div style=3D"box-sizing: border-box; direction: ltr; display: none; font-f=
+amily: &#39;Google Sans&#39;, Roboto, Arial, sans-serif; margin: 0; max-hei=
+ght: 0px; overflow: hidden;" dir=3Dltr>=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+=C2=A0=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+=C2=A0
+</div> <section>
+<div class=3D"outer full-width" dir=3Dltr style=3D"background-color: #FFFFF=
+F; border: 1px solid #E8EAED; margin: 0 auto;">
+<!-- INSERT PARTIALS HERE -->
+<table class=3D"spacer m-hide" width=3D100% role=3Dpresentation cellpadding=
+=3D0 cellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 48px; line-heig=
+ht: 48px;" height=3D48>=C2=A0</td>
+</tr>
+</table>
+<table class=3D"spacer desktop-hide" width=3D100% role=3Dpresentation cellp=
+adding=3D0 cellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 36px; line-heig=
+ht: 36px;" height=3D36>=C2=A0</td>
+</tr>
+</table><table cellspacing=3D0 cellpadding=3D0 border=3D0 role=3Dpresentati=
+on class=3D"center full-width" style=3D"text-align: center; margin: 0 auto;=
+" align=3Dcenter>
+<tr>
+<td style=3D"font-family: inherit; background-color: #ffffff;" bgcolor=3D#f=
+fffff>
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 role=3Dpresentation class=
+=3Dcenter style=3D"text-align: center; margin: 0 auto; border: 0px; border-=
+radius: 0px; background-color: #ffffff;" bgcolor=3D#ffffff align=3Dcenter>
+<tr>
+<td class=3D"desktop-hide m-hide" style=3D"font-family: inherit;"></td>
+<td style=3D"font-family: inherit;">
+<div class=3D"img-com ">
+<img src=3Dhttps://services.google.com/fh/files/emails/g1_red_triangle.png =
+alt width=3D54 height=3Dauto style=3D"display: block; text-align: center; m=
+argin: 0 auto;" aria-hidden=3Dtrue class=3D"img img-com__img center " borde=
+r=3D0>
+</div>
+</td>
+<td class=3D"desktop-hide m-hide" style=3D"font-family: inherit;"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class=3D"spacer m-hide" width=3D100% role=3Dpresentation cellpadding=
+=3D0 cellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 12px; line-heig=
+ht: 12px;" height=3D12>=C2=A0</td>
+</tr>
+</table>
+<table class=3D"spacer desktop-hide" width=3D100% role=3Dpresentation cellp=
+adding=3D0 cellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 12px; line-heig=
+ht: 12px;" height=3D12>=C2=A0</td>
+</tr>
+</table>
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D"full-width center compact-1__outer-padding " style=3D"text-align: cente=
+r; margin: 0 auto; background-color: #ffffff;" bgcolor=3D#ffffff align=3Dce=
+nter>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"col-2 m-hide" style=3D"font-family: inherit;">=C2=
+=A0</td>
+<td class=3D"compact-1 col-432 col-m-4 " style=3D"font-family: inherit; bac=
+kground-color: #ffffff; padding-top: 8px; padding-bottom: 8px;" bgcolor=3D#=
+ffffff>
+<div class=3D"compact-1__content ">
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<h3 style=3D"font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helve=
+tica, Arial, sans-serif; font-weight: 400; letter-spacing: 0; font-size: 38=
+px; line-height: 130%; color: #1F1F1F; margin: 0 0 8px 0;" class=3D"h2 copy=
+ headline ">You&#39;re out of storage and will stop receiving emails soon</=
+h3>
+</div>
+</div>
+</td>
+<td class=3D"col-2 m-hide" style=3D"font-family: inherit;">=C2=A0</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+<div class=3D"text-block center full-width" style=3D"text-align: center; ma=
+rgin: 0 auto; -webkit-text-size-adjust: 100%; font-family: &#39;Google Sans=
+&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif; color: #1F1F1F;">
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3Dfull-width align=3Dcenter style=3D"margin: 0 auto;">
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td style=3D"font-family: inherit;">
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D" center" width=3D100% style=3D"text-align: center; margin: 0 auto;" ali=
+gn=3Dcenter>
+<tr>
+<td style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 4px; line-heigh=
+t: 4px;" height=3D4>=C2=A0</td>
+</tr>
+</table>
+<table class=3D"col-m-4 col-12 col-400 center" style=3D"text-align: center;=
+ margin: 0 auto;" role=3Dpresentation cellpadding=3D0 cellspacing=3D0 borde=
+r=3D0 align=3Dcenter>
+<tr>
+<td width=3D57 class=3Dm-hide style=3D"font-family: inherit;">=C2=A0</td> <=
+td width=3D16 class=3Ddesktop-hide style=3D"font-family: inherit;">=C2=A0</=
+td> <td valign=3Dtop class=3D"text-block_d-align-center text-block_m-align-=
+center full-width text-block_subhead" style=3D"margin: 0 auto; font-family:=
+ &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif;"=
+>
+<div class=3D"copy-lockup " style=3D"margin: 0 auto; text-align: center;">
+</div>
+</td>
+<td width=3D57 class=3Dm-hide style=3D"font-family: inherit;">=C2=A0</td> <=
+td width=3D16 class=3Ddesktop-hide style=3D"font-family: inherit;">=C2=A0</=
+td> </tr>
+<tr>
+<td width=3D57 class=3Dm-hide style=3D"font-family: inherit;">=C2=A0</td> <=
+td width=3D16 class=3Ddesktop-hide style=3D"font-family: inherit;">=C2=A0</=
+td> <td valign=3Dtop class=3D"text-block_d-align-center text-block_m-align-=
+center full-width" style=3D"font-family: inherit; margin: 0 auto;">
+<div class=3D"copy-lockup " style=3D"margin: 0 auto; text-align: center;">
+<p class=3D"subhead copy " style=3D"margin: 0; letter-spacing: 0; font-fami=
+ly: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-seri=
+f; font-size: 27px; line-height: 35px; color: #B3261E; font-weight: 700;"><=
+span class=3D"" style=3D"color:#B3261E;font-size:100px; line-height:100px;"=
+>5</span><br> days remaining</p>
+</div>
+</td>
+<td width=3D57 class=3Dm-hide style=3D"font-family: inherit;">=C2=A0</td> <=
+td width=3D16 class=3Ddesktop-hide style=3D"font-family: inherit;">=C2=A0</=
+td> </tr>
+</table>
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 4px; line-heigh=
+t: 4px;" height=3D4>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+</table>
+</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+</div>
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D"full-width center compact-1__outer-padding " style=3D"text-align: cente=
+r; margin: 0 auto; background-color: #ffffff;" bgcolor=3D#ffffff align=3Dce=
+nter>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"col-1 m-hide" style=3D"font-family: inherit;">=C2=
+=A0</td>
+<td class=3D"compact-1 col-432 col-m-4 " style=3D"font-family: inherit; bac=
+kground-color: #ffffff; padding-top: 41px; padding-bottom: 42px;" bgcolor=
+=3D#ffffff>
+<div class=3D"compact-1__content ">
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<p class=3D"subhead copy large-body-font text-secondary-copy text-secondary=
+-copy" style=3D"margin: 0; letter-spacing: 0; font-size: 16px; font-family:=
+ &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif; =
+font-weight: 400; line-height: 150%; color: #5E5E5E;">You&#39;ve used all <=
+span style=3D"white-space: nowrap !important;">15 GB</span> of your Google =
+Account storage. <strong>If you don&#39;t take action by <span class=3D"" s=
+tyle=3Dwhite-space:nowrap;>Jul 14, 2025</span>, emails sent to you will bou=
+nce back to the sender and can&#39;t be recovered later.</strong> Without s=
+torage, you can no longer:</p>
+</div>
+</div>
+</td>
+<td class=3D"col-1 m-hide" style=3D"font-family: inherit;">=C2=A0</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+<table class=3D"full-width center" cellspacing=3D0 cellpadding=3D0 border=
+=3D0 role=3Dpresentation style=3D"text-align: center; margin: 0 auto;" alig=
+n=3Dcenter>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"col-2 m-hide" style=3D"font-family: inherit;"></td=
+>
+<td class=3D"gutter d-table-cell" style=3D"font-family: inherit; display: t=
+able-cell;"></td>
+<td class=3D"center " style=3D"font-family: inherit; text-align: center; ma=
+rgin: 0 auto; padding-bottom: 18px;" align=3Dcenter>
+<table class=3D"col-8 col-400 col-m-4 col-436" cellspacing=3D0 cellpadding=
+=3D0 border=3D0 role=3Dpresentation>
+<tr>
+<td class=3D" left" width=3D48 style=3D"font-family: inherit; text-align: l=
+eft; vertical-align: middle;" valign=3Dmiddle align=3Dleft>
+<div class=3D"img-com ">
+<img src=3Dhttps://www.gstatic.com/gumdrop/files/g1-gmail-benefit-eds-trans=
+parent-w96px-h96px-2x.png alt width=3D48 height=3Dauto style=3D"display: bl=
+ock;" aria-hidden=3Dtrue class=3D"img img-com__img " border=3D0>
+</div>
+</td>
+<td class=3D" left m-padding-benefit-list-a" style=3D"font-family: inherit;=
+ text-align: left; vertical-align: middle; padding-left: 16px;" valign=3Dmi=
+ddle align=3Dleft>
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<p class=3D"subhead copy text-secondary-copy" style=3D"margin: 0; line-heig=
+ht: 150%; font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helvetic=
+a, Arial, sans-serif; font-weight: 400; letter-spacing: 0; color: #5E5E5E; =
+font-size: 16px;">Send and receive emails on Gmail after 5 days</p>
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td class=3D"gutter d-table-cell" style=3D"font-family: inherit; display: t=
+able-cell;"></td>
+<td class=3D"col-2 m-hide" style=3D"font-family: inherit;"></td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+<table class=3D"full-width center" cellspacing=3D0 cellpadding=3D0 border=
+=3D0 role=3Dpresentation style=3D"text-align: center; margin: 0 auto;" alig=
+n=3Dcenter>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"col-2 m-hide" style=3D"font-family: inherit;"></td=
+>
+<td class=3D"gutter d-table-cell" style=3D"font-family: inherit; display: t=
+able-cell;"></td>
+<td class=3D"center " style=3D"font-family: inherit; text-align: center; ma=
+rgin: 0 auto; padding-bottom: 18px;" align=3Dcenter>
+<table class=3D"col-8 col-400 col-m-4 col-436" cellspacing=3D0 cellpadding=
+=3D0 border=3D0 role=3Dpresentation>
+<tr>
+<td class=3D" left" width=3D48 style=3D"font-family: inherit; text-align: l=
+eft; vertical-align: middle;" valign=3Dmiddle align=3Dleft>
+<div class=3D"img-com ">
+<img src=3Dhttps://www.gstatic.com/gumdrop/files/g1-photos-eds-transparent-=
+w96px-h96px-2x.png alt width=3D48 height=3Dauto style=3D"display: block;" a=
+ria-hidden=3Dtrue class=3D"img img-com__img " border=3D0>
+</div>
+</td>
+<td class=3D" left m-padding-benefit-list-a" style=3D"font-family: inherit;=
+ text-align: left; vertical-align: middle; padding-left: 16px;" valign=3Dmi=
+ddle align=3Dleft>
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<p class=3D"subhead copy text-secondary-copy" style=3D"margin: 0; line-heig=
+ht: 150%; font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helvetic=
+a, Arial, sans-serif; font-weight: 400; letter-spacing: 0; color: #5E5E5E; =
+font-size: 16px;">Back up new photos and videos to <span style=3D"white-spa=
+ce: nowrap !important;">Google Photos</span></p>
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td class=3D"gutter d-table-cell" style=3D"font-family: inherit; display: t=
+able-cell;"></td>
+<td class=3D"col-2 m-hide" style=3D"font-family: inherit;"></td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+<table class=3D"full-width center" cellspacing=3D0 cellpadding=3D0 border=
+=3D0 role=3Dpresentation style=3D"text-align: center; margin: 0 auto;" alig=
+n=3Dcenter>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"col-2 m-hide" style=3D"font-family: inherit;"></td=
+>
+<td class=3D"gutter d-table-cell" style=3D"font-family: inherit; display: t=
+able-cell;"></td>
+<td class=3D"center " style=3D"font-family: inherit; text-align: center; ma=
+rgin: 0 auto; padding-bottom: 18px;" align=3Dcenter>
+<table class=3D"col-8 col-400 col-m-4 col-436" cellspacing=3D0 cellpadding=
+=3D0 border=3D0 role=3Dpresentation>
+<tr>
+<td class=3D" left" width=3D48 style=3D"font-family: inherit; text-align: l=
+eft; vertical-align: middle;" valign=3Dmiddle align=3Dleft>
+<div class=3D"img-com ">
+<img src=3Dhttps://www.gstatic.com/gumdrop/files/g1-gdrive-benefit-eds-tran=
+sparent-w96px-h96px-2x.png alt width=3D48 height=3Dauto style=3D"display: b=
+lock;" aria-hidden=3Dtrue class=3D"img img-com__img " border=3D0>
+</div>
+</td>
+<td class=3D" left m-padding-benefit-list-a" style=3D"font-family: inherit;=
+ text-align: left; vertical-align: middle; padding-left: 16px;" valign=3Dmi=
+ddle align=3Dleft>
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<p class=3D"subhead copy text-secondary-copy" style=3D"margin: 0; line-heig=
+ht: 150%; font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helvetic=
+a, Arial, sans-serif; font-weight: 400; letter-spacing: 0; color: #5E5E5E; =
+font-size: 16px;">Upload new files to <span style=3D"white-space: nowrap !i=
+mportant;">Google Drive</span></p>
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td class=3D"gutter d-table-cell" style=3D"font-family: inherit; display: t=
+able-cell;"></td>
+<td class=3D"col-2 m-hide" style=3D"font-family: inherit;"></td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+<table class=3D"full-width center" cellspacing=3D0 cellpadding=3D0 border=
+=3D0 role=3Dpresentation style=3D"text-align: center; margin: 0 auto;" alig=
+n=3Dcenter>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"col-2 m-hide" style=3D"font-family: inherit;"></td=
+>
+<td class=3D"gutter d-table-cell" style=3D"font-family: inherit; display: t=
+able-cell;"></td>
+<td class=3D"center " style=3D"font-family: inherit; text-align: center; ma=
+rgin: 0 auto; padding-bottom: 18px;" align=3Dcenter>
+<table class=3D"col-8 col-400 col-m-4 col-436" cellspacing=3D0 cellpadding=
+=3D0 border=3D0 role=3Dpresentation>
+<tr>
+<td class=3D" left" width=3D48 style=3D"font-family: inherit; text-align: l=
+eft; vertical-align: middle;" valign=3Dmiddle align=3Dleft>
+<div class=3D"img-com ">
+<img src=3Dhttps://www.gstatic.com/gumdrop/files/g1-gspace-benefit-eds-tran=
+sparent-w96px-h96px-2x.png alt width=3D48 height=3Dauto style=3D"display: b=
+lock;" aria-hidden=3Dtrue class=3D"img img-com__img " border=3D0>
+</div>
+</td>
+<td class=3D" left m-padding-benefit-list-a" style=3D"font-family: inherit;=
+ text-align: left; vertical-align: middle; padding-left: 16px;" valign=3Dmi=
+ddle align=3Dleft>
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<p class=3D"subhead copy text-secondary-copy" style=3D"margin: 0; line-heig=
+ht: 150%; font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helvetic=
+a, Arial, sans-serif; font-weight: 400; letter-spacing: 0; color: #5E5E5E; =
+font-size: 16px;">Edit or create new files using <span style=3D"white-space=
+: nowrap !important;">Google Docs,</span> Sheets, Slides, Forms and more</p=
+>
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td class=3D"gutter d-table-cell" style=3D"font-family: inherit; display: t=
+able-cell;"></td>
+<td class=3D"col-2 m-hide" style=3D"font-family: inherit;"></td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D"full-width center compact-1__outer-padding " style=3D"text-align: cente=
+r; margin: 0 auto; background-color: #ffffff;" bgcolor=3D#ffffff align=3Dce=
+nter>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"compact-1 col-432 col-m-4 " style=3D"font-family: =
+inherit; background-color: #ffffff; padding-top: 37px; padding-bottom: 40px=
+;" bgcolor=3D#ffffff>
+<div class=3D"compact-1__content ">
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<p class=3D"subhead copy text-secondary-copy" style=3D"margin: 0; line-heig=
+ht: 150%; font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helvetic=
+a, Arial, sans-serif; font-weight: 400; letter-spacing: 0; color: #5E5E5E; =
+font-size: 16px !important;">Get more storage with a <span style=3D"white-s=
+pace: nowrap !important;">Google One</span> membership.</p>
+<div dir=3Dltr class=3D"single-cta center " style=3D"text-align: center; di=
+splay: block; max-height: 48px; margin: 16px 0 0 0;">
+<a href=3Dhttps://c.gle/ANiao5qSmpz2W2aSMYCNiqxLH-FFWcQGAxmtRiGrCQ21pvI_e7F=
+UtOazPT_ZyGgLgNvcX9Q_r4Lxv3R2YXaBOuxCIwcl67wzfJ51sDw30eYM8Up6guE9QIJWJ-gH8n=
+ea-N5M-eCA7mbd_KMUBNbRkjldXxhZ2XY8biyERjlHmXUMqg54LJ3xhmsoqCEOFZd84Lb_cdRQD=
+-JNWx-WnLlb6kXF1S3W7TBcis4Wta3VrqXLweTIKs2qn4cGH685H3et4ChCLvAFSmS9IZvpTPWB=
+Hu_k7PJSBNZ04PAEX4ZkQyfg_SSI4xKLqZjTF9FhmdZhKKLXVA_7oDieJTR3yWw7U7jW0g4pRFw=
+DFqIS4TnH5Xfr_SZQoVyAGHsKDSXf3rk9agwc92tImelLBt__dmDU2vVHLO8SQO9ylYRP-egzIL=
+vlw2238X7Ewh1xbJTaPya45z_5od4 target=3D_blank style=3D"font-weight: 500; li=
+ne-height: 150%; font-size: 14px; letter-spacing: 0px; color: #0B57D0; text=
+-decoration: none; display: inline-block; font-family: &#39;Google Sans&#39=
+;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif;">
+<div class=3Dsingle-cta__cta-wrapper style=3D"padding: 4px 0 4px 0px;">
+<table role=3Dpresentation cellspacing=3D0 cellpadding=3D0 border=3D0 align=
+=3Dcenter height=3D40>
+<tr>
+<td style=3D"font-family: inherit;">
+<span dir=3Dltr class=3D"single-cta__blue-button " style=3D"font-size: 14px=
+; line-height: 21px; font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39=
+;, Helvetica, Arial, sans-serif; max-height: 60px; display: inline-block; b=
+ox-sizing: border-box; padding: 9px 18px; border-radius: 40px; letter-spaci=
+ng: 0px; text-align: center; font-weight: 500; color: #FFFFFF; background-c=
+olor: #0B57D0;">Get more storage</span>
+</td>
+</tr>
+</table>
+</div>
+</a>
+</div>
+</div>
+</div>
+</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D"full-width center compact-1__outer-padding " style=3D"text-align: cente=
+r; margin: 0 auto; background-color: #ffffff;" bgcolor=3D#ffffff align=3Dce=
+nter>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"col-1 m-hide" style=3D"font-family: inherit;">=C2=
+=A0</td>
+<td class=3D"compact-1 col-432 col-m-4 " style=3D"font-family: inherit; bac=
+kground-color: #ffffff; padding-top: 34px; padding-bottom: 48px;" bgcolor=
+=3D#ffffff>
+<div class=3D"compact-1__content ">
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<h3 style=3D"font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helve=
+tica, Arial, sans-serif; font-weight: 400; letter-spacing: 0; color: #1F1F1=
+F; margin: 0 0 8px 0; margin-bottom: 22px; font-size: 30px !important; line=
+-height: 130% !important;" class=3D"h2 copy headline ">Not ready to get mor=
+e storage?</h3>
+<div dir=3Dltr class=3D"single-cta center " style=3D"text-align: center; di=
+splay: block; max-height: 48px; margin: 16px 0 0 0;">
+<a href=3Dhttps://c.gle/ANiao5rT91IUMiKfpdCzz11fVgXxzNfYmOG_sHjMfcGtVc_U55g=
+vHKSmC_7GXbtEDfEyo2QCojVbAEp7nNbwtt_XayKb_309FS3buBdpXeBxYQVFW3JclZDVic7Wfu=
+rWkarP6F8tka3EXwLL-zNagGz_DhBphP_hMWOMo328mdW6mDixy2hitnCFhZ4tZqfZqoZulTCAp=
+6ajaF_i9BbgKMRT6bgRds_CJT4DOnFaks-VIWwBHRSbb7NGl05kTK6zQGYEUybGEwESKd-8_Vxu=
+U0Gszeir8nDFEz7Ok7qnW8IxEvED1jl5fvDdb4tFj-yET9mJTnvo9VspE6O1H8M8VwL6h3cd9k1=
+EMihISHwRHdl_K0ljX0IpEO7icJwu-m2sJkjJjATofnVf0NPFCpvc8i_KKbCrWB_GOx8lqP34St=
+wwyu5t39TbLBb_8FNufca682cm2x-36b0pAMfg3oJrbsMyjKZAaWCa target=3D_blank styl=
+e=3D"font-weight: 500; line-height: 150%; font-size: 14px; letter-spacing: =
+0px; color: #0B57D0; text-decoration: none; display: inline-block; font-fam=
+ily: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-ser=
+if;">
+<div class=3Dsingle-cta__cta-wrapper style=3D"padding: 4px 0 4px 0px;">
+<table role=3Dpresentation cellspacing=3D0 cellpadding=3D0 border=3D0 align=
+=3Dcenter height=3D40>
+<tr>
+<td style=3D"font-family: inherit;">
+<span dir=3Dltr class=3D"single-cta__blue-button " style=3D"font-size: 14px=
+; line-height: 21px; font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39=
+;, Helvetica, Arial, sans-serif; max-height: 60px; display: inline-block; b=
+ox-sizing: border-box; padding: 9px 18px; border-radius: 40px; letter-spaci=
+ng: 0px; text-align: center; font-weight: 500; color: #FFFFFF; background-c=
+olor: #0B57D0;">Clean up space</span>
+</td>
+</tr>
+</table>
+</div>
+</a>
+</div>
+</div>
+</div>
+</td>
+<td class=3D"col-1 m-hide" style=3D"font-family: inherit;">=C2=A0</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3Dfull-width style=3D"margin: 0 auto; background-color: #ffffff;" bgcolor=
+=3D#ffffff>
+<tr>
+<td class=3D"col card-10c__row" valign=3Dtop style=3D"font-family: inherit;=
+">
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D"m-100pct card-10c-outer-container" style=3D"margin: 0 auto;">
+<tr>
+<td height=3D1 valign=3Dtop style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 24px; line-heig=
+ht: 24px;" height=3D24>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td width=3D37 class=3Dm-hide style=3D"font-family: inherit;">=
+=C2=A0</td> <td valign=3Dtop style=3D"font-family: inherit;">
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D"col card-10c__text-right col-10 col-400 m-100pct col-m-4 card-10c-conta=
+iner card-10c " width=3D100%>
+<tr>
+<td class=3D"col card-10c__card " valign=3Dtop style=3D"font-family: inheri=
+t;">
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 width=
+=3D100% style=3D"table-layout: fixed;">
+<tr>
+<td style=3D"font-family: inherit;">
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 width=
+=3D100% class=3D"br-20 " style=3D"border-radius: 20px; border-left: 1px sol=
+id #E3E3E3; border-right: 1px solid #E3E3E3; border-top: 1px solid #E3E3E3;=
+ border-bottom: 1px solid #E3E3E3;" bgcolor=3D#ffffff>
+<tr>
+<td height=3D1 valign=3Dtop style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 36px; line-heig=
+ht: 36px;" height=3D36>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+<tr class=3Dtext-simple>
+<td height=3D100% valign=3Dtop class style=3D"font-family: inherit;">
+<div class=3D"copy-lockup center" style=3D"margin: 0 auto; padding: 0px 37p=
+x 0px 37px; text-align: center;">
+<div class=3D"img-com ">
+<img src=3Dhttps://www.gstatic.com/gumdrop/files/google-one-transparent-w12=
+0px-h120px-2x.png alt width=3D36 height=3D36 style=3D"display: block; text-=
+align: center; margin: 0 auto 12px;" aria-hidden=3Dtrue class=3D"img img-co=
+m__img center " border=3D0>
+</div>
+<h3 style=3D"font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helve=
+tica, Arial, sans-serif; font-weight: 400; letter-spacing: 0; font-size: 24=
+px; line-height: 150%; color: #1F1F1F; margin: 0 0 8px 0;" class=3D"h5 copy=
+ headline ">What is Google One?</h3>
+<p class=3D"subhead copy p large-body-font text-secondary-copy" style=3D"ma=
+rgin: 0; letter-spacing: 0; font-size: 16px; font-family: &#39;Google Sans&=
+#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif; font-weight: 400; =
+line-height: 150%; color: #5E5E5E;">Google One is a membership that offers =
+expanded storage and additional member benefits<sup style=3Dfont-size:10px;=
+line-height:0px;>=E2=80=A1</sup> =E2=80=93 all in one shareable plan.</p>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D1 valign=3Dtop style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 36px; line-heig=
+ht: 36px;" height=3D36>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td width=3D37 class=3Dm-hide style=3D"font-family: inherit;">=
+=C2=A0</td> </tr>
+<tr>
+<td height=3D1 valign=3Dtop style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 24px; line-heig=
+ht: 24px;" height=3D24>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 8px; line-heigh=
+t: 8px;" height=3D8px>=C2=A0</td>
+</tr>
+</table>
+<div class=3D"text-block center full-width" style=3D"text-align: center; ma=
+rgin: 0 auto; -webkit-text-size-adjust: 100%; font-family: &#39;Google Sans=
+&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif; color: #1F1F1F;">
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3Dfull-width align=3Dcenter style=3D"margin: 0 auto;">
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td style=3D"font-family: inherit;">
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D" center" width=3D100% style=3D"text-align: center; margin: 0 auto;" ali=
+gn=3Dcenter>
+<tr>
+<td style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 26px; line-heig=
+ht: 26px;" height=3D26>=C2=A0</td>
+</tr>
+</table>
+<table class=3D"col-m-4 col-12 col-400 center" style=3D"text-align: center;=
+ margin: 0 auto;" role=3Dpresentation cellpadding=3D0 cellspacing=3D0 borde=
+r=3D0 align=3Dcenter>
+<tr>
+<td width=3D57 class=3Dm-hide style=3D"font-family: inherit;">=C2=A0</td> <=
+td width=3D16 class=3Ddesktop-hide style=3D"font-family: inherit;">=C2=A0</=
+td> <td valign=3Dtop class=3D"text-block_d-align-center text-block_m-align-=
+center full-width text-block_subhead" style=3D"margin: 0 auto; font-family:=
+ &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif;"=
+>
+<div class=3D"copy-lockup " style=3D"margin: 0 auto; text-align: center;">
+</div>
+</td>
+<td width=3D57 class=3Dm-hide style=3D"font-family: inherit;">=C2=A0</td> <=
+td width=3D16 class=3Ddesktop-hide style=3D"font-family: inherit;">=C2=A0</=
+td> </tr>
+<tr>
+<td width=3D57 class=3Dm-hide style=3D"font-family: inherit;">=C2=A0</td> <=
+td width=3D16 class=3Ddesktop-hide style=3D"font-family: inherit;">=C2=A0</=
+td> <td valign=3Dtop class=3D"text-block_d-align-center text-block_m-align-=
+center full-width" style=3D"font-family: inherit; margin: 0 auto;">
+<div class=3D"copy-lockup " style=3D"margin: 0 auto; text-align: center;">
+<p class=3D"subhead copy tiny-body-italic center " style=3D"text-align: cen=
+ter; margin: 0 auto; letter-spacing: 0; line-height: 150%; font-weight: 400=
+; font-style: italic; font-family: &#39;Google Sans&#39;, &#39;Open Sans&#3=
+9;, Helvetica, Arial, sans-serif; color: #5E5E5E; font-size: 14px !importan=
+t;">Please disregard this email if you have already taken=C2=A0action.</p>
+</div>
+</td>
+<td width=3D57 class=3Dm-hide style=3D"font-family: inherit;">=C2=A0</td> <=
+td width=3D16 class=3Ddesktop-hide style=3D"font-family: inherit;">=C2=A0</=
+td> </tr>
+</table>
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 24px; line-heig=
+ht: 24px;" height=3D24>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+</table>
+</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+</div>
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 14px; line-heig=
+ht: 14px;" height=3D14px>=C2=A0</td>
+</tr>
+</table>
+<table role=3Dpresentation cellspacing=3D0 cellpadding=3D0 border=3D0 class=
+=3Dfull-width style=3D"margin: 0 auto;">
+<tr>
+<td class=3D"m-hide " style=3D"font-family: inherit; padding: 0px;">
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 role=3Dpresentation class=
+=3D" center" style=3D"text-align: center; margin: 0 auto;" align=3Dcenter>
+<tr>
+<td class=3Dfull-width style=3D"font-family: inherit; margin: 0 auto; font-=
+size: 0px; line-height: 0px; border-top: 1px solid #E3E3E3;">
+=C2=A0
+</td>
+</tr>
+</table>
+</td>
+<td class=3D"desktop-hide " style=3D"font-family: inherit;">
+<table role=3Dpresentation cellspacing=3D0 cellpadding=3D0 border=3D0 class=
+=3D"col-400 full-width center" style=3D"text-align: center; margin: 0 auto;=
+ padding: 0;" align=3Dcenter>
+<tr>
+<td style=3D"font-family: inherit; font-size: 0px; line-height: 0px; border=
+-top: 1px solid #E3E3E3; max-width: 400px;">
+=C2=A0
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D"full-width center compact-1__outer-padding " style=3D"text-align: cente=
+r; margin: 0 auto; background-color: #ffffff;" bgcolor=3D#ffffff align=3Dce=
+nter>
+<tr>
+<td style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 40px; line-heig=
+ht: 40px;" height=3D40>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"col-2 m-hide" style=3D"font-family: inherit;">=C2=
+=A0</td>
+<td class=3D"desktop-hide mobile-hide" style=3D"font-family: inherit;">=C2=
+=A0</td>
+<td class=3Dgutter style=3D"font-family: inherit;">=C2=A0</td>
+<td class=3D"compact-1 col-8 col-400 " style=3D"font-family: inherit; backg=
+round-color: #ffffff;" bgcolor=3D#ffffff>
+<div class=3D" ">
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<img src=3Dhttps://services.google.com/fh/files/emails/g1_help_center_quest=
+ion_mark_36x36.png alt width=3D36 height style=3D"text-align: center; displ=
+ay: inline-block; margin: 0 0 6px 0 !important;" aria-hidden=3Dtrue class=
+=3D"img img-com__img center support-img " border=3D0>
+<h3 style=3D"font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Helve=
+tica, Arial, sans-serif; font-weight: 400; letter-spacing: 0; font-size: 24=
+px; line-height: 150%; color: #1F1F1F; margin: 0 0 8px 0;" class=3D"h5 copy=
+ headline ">Have any questions?</h3>
+<div dir=3Dltr class=3D"single-text-cta center compact-1__text_cta" style=
+=3D"text-align: center; white-space: nowrap; display: inline-block; margin:=
+ 12px 0 0 0 !important;">
+<a href=3Dhttps://c.gle/ANiao5rONqLPgePVVPa8U2wqmkH11DdrIdoxKPyWbqSGjx-4jVs=
+mtC_IJteia-HexKQIskq00zqGBJsymgsT54ncEu7rJzu7DH_-YwXtljPuP7f-CieBCUDN1h9ATJ=
+W-w1dGaNMAHkgonmLYz_u4FBNLALUuuHMigtR-Ul5Ig8Tv target=3D_blank style=3D"fon=
+t-weight: 500; text-decoration: none; color: #0B57D0; font-size: 14px; line=
+-height: 21px; letter-spacing: 0px; font-family: &#39;Google Sans&#39;, &#3=
+9;Open Sans&#39;, Helvetica, Arial, sans-serif;">
+Visit the Help Centre <span class=3Dsingle-text-cta__arrow style=3D"vertica=
+l-align: -1px; display: inline-block; font-size: 21px; font-family: &#39;Go=
+ogle Sans&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif; font-wei=
+ght: 400; line-height: 19px;">=E2=80=BA</span>
+</a>
+</div>
+</div>
+</div>
+</td>
+<td class=3Dgutter style=3D"font-family: inherit;">=C2=A0</td>
+<td class=3D"desktop-hide mobile-hide" style=3D"font-family: inherit;">=C2=
+=A0</td>
+<td class=3D"col-2 m-hide" style=3D"font-family: inherit;">=C2=A0</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+<tr>
+<td style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 40px; line-heig=
+ht: 40px;" height=3D40>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+</table>
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D"mod-hats m-100pct full-width center" style=3D"text-align: center; margi=
+n: 0 auto; background-color: #F9F9F9;" bgcolor=3D#F9F9F9 align=3Dcenter>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td style=3D"font-family: inherit;">
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 class=
+=3D"mod-hats__outer-container m-100pct" style=3D"margin: 0 auto; width: 100=
+%;" align=3Dcenter width=3D100%>
+<tr>
+<td height=3D1 valign=3Dtop style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 32px; line-heig=
+ht: 32px;" height=3D32>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+<tr>
+<td class=3Dmod-hats__headline style=3D"font-family: inherit; text-align: c=
+enter;" align=3Dcenter>
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<h3 style=3D"letter-spacing: 0; font-size: 18px; font-family: &#39;Google S=
+ans&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif; line-height: 1=
+50%; font-weight: 500; margin: 0 0 8px 0; color: #5E5E5E;" class=3D"subhead=
+-1 copy headline ">Was this email helpful?</h3>
+</div>
+</td>
+</tr>
+<tr>
+<td class=3Dcenter style=3D"font-family: inherit; text-align: center; margi=
+n: 0 auto;" align=3Dcenter>
+<div class=3Dmod-hats__hats-table style=3D"margin: 0 auto; height: 48px;">
+<table role=3Dpresentation cellpadding=3D0 cellspacing=3D0 border=3D0 style=
+=3D"display: inline-block;">
+<tbody>
+<tr class=3Dmod-hats__hats-table-container>
+<td width=3D48 height=3D48 align=3Dcenter style=3D"font-family: inherit;">
+<div class=3D"img-com mod-hats__hat_icon hat_icon center " style=3D"text-al=
+ign: center; margin: 0 auto;">
+<a href=3Dhttps://c.gle/ANiao5rYifmZkTxc8vSle4deHUK8zEZNqBF5Ng1LxO49AE0ec2a=
+9tYYBPZuserSh8daLTCvblsPLhNAxf2qwgqoCwmsEjJUtZgEkG1UnSCzOo3du35XmFYEDO8hCgM=
+_G8a6gUg-2oN6fO8PI_njJ1Qg09to9w6yBw4qUHx_uUgcp97hRorAjVRO1cmQw53Ux4CbM1TMhS=
+MAgOx_f_SEDP5Gi5A target=3D_blank style=3D"font-family: &#39;Google Sans&#3=
+9;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif; font-weight: 500; li=
+ne-height: 150%; font-size: 14px; letter-spacing: 0px; color: #0B57D0; text=
+-decoration: none; width: 48px; height: 48px;">
+<img src=3Dhttps://services.google.com/fh/files/emails/g1_photos_icon_happy=
+_2x_32x32.png alt=3DHappy width=3D36 height=3D36 style=3D"display: block; t=
+ext-align: center; margin: 0 auto; padding: 6px; cursor: pointer;" aria-hid=
+den=3Dfalse class=3D"img img-com__img center " border=3D0>
+</a>
+</div>
+</td>
+<td width=3D20 class style=3D"font-family: inherit;">=C2=A0</td> <td width=
+=3D48 height=3D48 align=3Dcenter style=3D"font-family: inherit;">
+<div class=3D"img-com mod-hats__hat_icon hat_icon center " style=3D"text-al=
+ign: center; margin: 0 auto;">
+<a href=3Dhttps://c.gle/ANiao5pSkfo8dmzDRCvp7AFN_YXNLomMeBaL26rfr0_CXPiHBtq=
+kTOAqV5U4HO9Z0Sda5vsoEgNhVIAAf7EVusiVf-GQWtMFCZIQZNB5L08jN7lj-SgpnZiBX3CrbY=
+Vm6rmCyfzfI8uEtlzSyzOjONpNgcfJ_kHA43JkcWPaxjarDxnHAGwJAIQcDc5TcMORq0TymN6gS=
+nTWnV4JhyYe2U8RTyDy9FY target=3D_blank style=3D"font-family: &#39;Google Sa=
+ns&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif; font-weight: 50=
+0; line-height: 150%; font-size: 14px; letter-spacing: 0px; color: #0B57D0;=
+ text-decoration: none; width: 48px; height: 48px;">
+<img src=3Dhttps://services.google.com/fh/files/emails/g1_photos_icon_meh_2=
+x_32x32.png alt=3DNeutral width=3D36 height=3D36 style=3D"display: block; t=
+ext-align: center; margin: 0 auto; padding: 6px; cursor: pointer;" aria-hid=
+den=3Dfalse class=3D"img img-com__img center " border=3D0>
+</a>
+</div>
+</td>
+<td width=3D20 class style=3D"font-family: inherit;">=C2=A0</td> <td width=
+=3D48 height=3D48 align=3Dcenter style=3D"font-family: inherit;">
+<div class=3D"img-com mod-hats__hat_icon hat_icon center " style=3D"text-al=
+ign: center; margin: 0 auto;">
+<a href=3Dhttps://c.gle/ANiao5rS-M-7WGcmATbT9AACPBJbiS34XuM4T825QOAL4QMsWxF=
+08MhW_c_HqZzQZyYWTsQokmyl-_C5hoXIx62vQzAwv-o5BMeciMlZrW3ZvjGaPnUtqw-eqc5-Od=
+o_SKz62Y8uXzXJOpLNgOrlhfzrXeOlpVVtjo5ryMo4gCrQM_zjA5fZPj2MBvLdePOZXYFHbNMFf=
+YXVh1LWDhuq target=3D_blank style=3D"font-family: &#39;Google Sans&#39;, &#=
+39;Open Sans&#39;, Helvetica, Arial, sans-serif; font-weight: 500; line-hei=
+ght: 150%; font-size: 14px; letter-spacing: 0px; color: #0B57D0; text-decor=
+ation: none; width: 48px; height: 48px;">
+<img src=3Dhttps://services.google.com/fh/files/emails/g1_photos_icon_sad_2=
+x_32x32.png alt=3DSad width=3D36 height=3D36 style=3D"display: block; text-=
+align: center; margin: 0 auto; padding: 6px; cursor: pointer;" aria-hidden=
+=3Dfalse class=3D"img img-com__img center " border=3D0>
+</a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D1 valign=3Dtop style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 32px; line-heig=
+ht: 32px;" height=3D32>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+</table>
+</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td></tr></table>
+<table class=3Dfull-width style=3D"margin: 0 auto;" role=3Dpresentation cel=
+lpadding=3D0 cellspacing=3D0 border=3D0>
+<tr>
+<td style=3D"font-family: inherit;">
+<table class=3D"spacer footer__background" width=3D100% role=3Dpresentation=
+ cellpadding=3D0 cellspacing=3D0 border=3D0 style=3D"background: #F9F9F9;">
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 24px; line-heig=
+ht: 24px;" height=3D24>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+</table>
+<table role=3Dpresentation border=3D0 cellspacing=3D0 cellpadding=3D0 class=
+=3Dfull-width dir=3Dltr style=3D"margin: 0 auto; background-color: #F9F9F9;=
+" bgcolor=3D#F9F9F9>
+<tr><td style=3D"font-family: inherit;">
+<table role=3Dpresentation class=3Dleft border=3D0 cellspacing=3D0 cellpadd=
+ing=3D0 style=3D"text-align: left;" align=3Dleft>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"gutter m-hide" style=3D"font-family: inherit;"></t=
+d>
+<td class valign=3Dtop style=3D"font-family: inherit; padding: 0px 8px 0px =
+0px; min-width: 10px;">
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<p class=3D"disclaimer tiny-body-font copy superscript-font" style=3D"lette=
+r-spacing: 0; font-weight: 400; font-size: 9px; font-family: &#39;Google Sa=
+ns&#39;, &#39;Open Sans&#39;, Helvetica, Arial, sans-serif; line-height: 18=
+px; color: #5E5E5E; margin: 0px;">=E2=80=A1</p>
+</div>
+</td>
+<td valign=3Dtop class style=3D"font-family: inherit;">
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<p class=3D"disclaimer tiny-body-font copy " style=3D"letter-spacing: 0; fo=
+nt-size: 12px; font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Hel=
+vetica, Arial, sans-serif; line-height: 150%; font-weight: 400; color: #5E5=
+E5E; margin: 0px;">All Google Accounts give you 15 GB of storage. By subscr=
+ibing, you agree to <a class=3Dapple_link1 href=3Dhttps://c.gle/ANiao5pwABp=
+5PbpOVfQjzrGureugmb0RpGEdwaIM2gkItdYTbZJS-rrUR_IKPKBW08T9j3m3nVWkVQ6tYJ7i-n=
+cP45-dtmuzN50dQc5ODrQllHYCVzfhpj9tQjVlb69A4e2RizpMVB4czCH8KfxrY0Ci2kZ0zUUbZ=
+nFyNyBkHkX1q8VTKnCg5XM3JAelRilhnKrtQuV5GQ4j_VYBWPlBYTf-mb2-qTetaDaiOBX2g81C=
+vYD6NgsAxlFy8kgNucbY70z2u3rEG7KwQZUYnBXLwaD4aocAqucikLohlH9ke1rg0zrktyfLU_7=
+DBrAf2CI style=3Dtext-decoration:underline;color:#0B57D0; target=3D_blank>
+our terms</a>. See <a class=3Dapple_link1 href=3Dhttps://c.gle/ANiao5rRRb4R=
+kbHPpNxbFlWuyaeM-KeB_IO3k3VKiouKxD95gLA2Zye2RNtBTG5bcafXW5ry0wK_gqVit5EwIeA=
+QHDm_4b7Z8S_noe6XZa47YAWHKJu-az25Ry0WDHl5AR6Wz1-pUnt1j8ZD1qddUdT27C0lBa3NjR=
+oFDqnlLQCduhFLp5dwTF8g style=3Dtext-decoration:underline;color:#0B57D0; tar=
+get=3D_blank>
+benefit requirements</a> and <a class=3Dapple_link1 href=3Dhttps://c.gle/AN=
+iao5p18kJIKRZVdy25x1z_xU5Xj3jTTBQqBwmZOJ5NTNGreyahBPnZ-0m-NylA8yQpcQs1KbJtf=
+-3HLEd2sPKPculVNB8vnl_ueeYtz2kdmUpzN7TenVuuIrooXEe8oylam-7Mr-zs_7Ax3v-wVWc =
+style=3Dtext-decoration:underline;color:#0B57D0; target=3D_blank>
+how Google handles data</a>.</p>
+</div>
+</td>
+<td class=3D"gutter m-hide" style=3D"font-family: inherit;"></td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+<tr>
+<td class style=3D"font-family: inherit;"><br></td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<td class=3Dclass_br-1 style=3D"font-family: inherit;"><br></td>
+</tr>
+<tr>
+<td style=3D"font-family: inherit;">
+<table role=3Dpresentation cellspacing=3D0 cellpadding=3D0 border=3D0 class=
+=3D"col-12 m-100pct center" style=3D"text-align: center; margin: 0 auto;" a=
+lign=3Dcenter>
+<tr>
+<td class=3D"m-hide " style=3D"font-family: inherit; padding: 0px;">
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 role=3Dpresentation class=
+=3D"mod_footer-side-padding col-12 center" style=3D"text-align: center; mar=
+gin: 0 auto;" align=3Dcenter>
+<tr>
+<td class=3Dfull-width style=3D"font-family: inherit; margin: 0 auto; font-=
+size: 0px; line-height: 0px; border-top: 1px solid #E3E3E3;">
+=C2=A0
+</td>
+</tr>
+</table>
+</td>
+<td class=3D"desktop-hide " style=3D"font-family: inherit;">
+<table role=3Dpresentation cellspacing=3D0 cellpadding=3D0 border=3D0 class=
+=3D"col-400 full-width padding_divider_mob center" style=3D"text-align: cen=
+ter; margin: 0 auto; padding: 0;" align=3Dcenter>
+<tr>
+<td style=3D"font-family: inherit; font-size: 0px; line-height: 0px; border=
+-top: 1px solid #E3E3E3; max-width: 400px;">
+=C2=A0
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td style=3D"font-family: inherit;">
+<table role=3Dpresentation class=3Dcenter border=3D0 cellspacing=3D0 cellpa=
+dding=3D0 style=3D"text-align: center; margin: 0 auto;" align=3Dcenter>
+<tr><td class=3Dclass_br-1 style=3D"font-family: inherit;"><br><br></td></t=
+r>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"gutter m-hide" style=3D"font-family: inherit;"></t=
+d>
+<td valign=3Dtop style=3D"font-family: inherit;">
+<div class=3D"copy-lockup " style=3D"margin: 0 auto;">
+<p class=3D"disclaimer tiny-body-font copy " style=3D"letter-spacing: 0; fo=
+nt-size: 12px; font-family: &#39;Google Sans&#39;, &#39;Open Sans&#39;, Hel=
+vetica, Arial, sans-serif; line-height: 150%; font-weight: 400; color: #5E5=
+E5E; margin: 0px;">You have received this mandatory email service announcem=
+ent to update you about important information regarding your Google Account=
+.</p>
+</div>
+</td>
+<td class=3D"gutter m-hide" style=3D"font-family: inherit;"></td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+<tr><td class=3Dclass_br-1 style=3D"font-family: inherit;"><br><br></td></t=
+r>
+</table>
+</td></tr>
+<tr><td style=3D"font-family: inherit;">
+<table class=3D"center full-width" role=3Dpresentation border=3D0 cellspaci=
+ng=3D0 cellpadding=3D0 style=3D"text-align: center; margin: 0 auto;" align=
+=3Dcenter>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class=3D"google_logo center" style=3D"font-family: inherit;=
+ text-align: center; margin: 0 auto;" align=3Dcenter>
+<div class=3D"img-com ">
+<img src=3Dhttps://services.google.com/fh/files/emails/g1logo-01.png alt wi=
+dth=3D69 height=3Dauto style=3D"display: block; text-align: center; margin:=
+ 0 auto;" aria-hidden=3Dtrue class=3D"img img-com__img center " border=3D0>
+</div>
+</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+<tr>
+<td colspan=3D3 style=3D"font-family: inherit;">
+<table class=3D"spacer " width=3D100% role=3Dpresentation cellpadding=3D0 c=
+ellspacing=3D0 border=3D0>
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 10px; line-heig=
+ht: 10px;" height=3D10>=C2=A0</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> <td class align=3Dcenter style=3D"font-family: inherit; directi=
+on: ltr;" dir=3Dltr>
+<span class=3D"forApple text-secondary-copy" style=3D"color: #5E5E5E;"><a c=
+lass=3Dtext-secondary-copy style=3D"font-family: &#39;Google Sans&#39;, &#3=
+9;Open Sans&#39;, Helvetica, Arial, sans-serif; letter-spacing: 0px; text-d=
+ecoration: none; color: #5E5E5E; font-size: 12px; line-height: 20px; font-w=
+eight: 400;"><font style=3D"cursor: text;">
+<span style=3D"font-size:inherit; color:inherit; font-weight:inherit; line-=
+height:inherit; font-family:inherit;">=C2=A9 2025 Google LLC 1600 Amphithea=
+tre Parkway, Mountain=C2=A0View,=C2=A0CA=C2=A094043</span>
+</font></a></span>
+</td>
+<td width=3D28 class=3Dmargin style=3D"font-family: inherit; width: 28px;">=
+=C2=A0</td> </tr>
+</table>
+</td></tr>
+</table>
+<table class=3Dfull-width style=3D"margin: 0 auto;" role=3Dpresentation cel=
+lpadding=3D0 cellspacing=3D0 border=3D0>
+<tr>
+<td style=3D"font-family: inherit;">
+<table class=3D"spacer footer__background" width=3D100% role=3Dpresentation=
+ cellpadding=3D0 cellspacing=3D0 border=3D0 style=3D"background: #F9F9F9;">
+<tr>
+<td class=3Dempty style=3D"font-family: inherit; font-size: 24px; line-heig=
+ht: 24px;" height=3D24>=C2=A0</td>
+</tr>
+</table> </td>
+</tr>
+</table>
+</div>
+</section>
+<div class=3Dgmailfix style=3D"display: none; white-space:nowrap;line-heigh=
+t:normal;font-size:15px;font-weight:normal;font-variant:normal;font-style:n=
+ormal;font-family:courier;color:#ffffff;min-width:600px!important;max-width=
+:600px!important;">
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </div>
+</td></tbody></table>
+<img alt=3D"" height=3D1 width=3D3 src=3Dhttps://notifications.google.com/g=
+/img/ANiao5qOjtmAHncFor9V7dC5kSkIjzMAzP3nE5woPYkO1-dX0489nqaV0cQeoRGNRoZbXk=
+JFFJM_aA_fMrgVrLgpGLaI5wGnttCCI6G2194QBKiiqH_knDKl1X7OpOOwUaVCmc-yNw.gif></=
+body>
+</html>
+--0000000000003c2c910639872d17--
