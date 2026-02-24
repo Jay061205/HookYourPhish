@@ -15,7 +15,8 @@ from dotenv import load_dotenv
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import streamlit.components.v1 as components
-
+import os
+API_KEY = os.getenv("GOOGLE_API_KEY")
 
 st.set_page_config(page_title="HookYourPhish",page_icon="🦈", layout="centered")
 st.title("🦈 HookYourPhish")
